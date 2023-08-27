@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sentiment Analysis Page</title>
+</head>
+<body>
+<h1>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+Welcome to SocialBuzz Inc.'s Sentiment Analysis Page</h1>
+<form action="/" method="post">
+<label for="comments">Enter social media comments (NOTE:
+comma-separated):</label><br>
+<textarea id="comments" name="comments" rows="4" cols="50"></textarea><br>
+<input type="submit" value="Analyze !">
+</form>
+{% if sentiments %}
+<h2><-------- Results are as follows -------> </h2>
+<ul>
+{% for sentiment in sentiments %}
+<li>{{ loop.index }}. {{ sentiment }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+</body>
+</html>
